@@ -450,7 +450,7 @@ services:
       # TODO: Allow configuring VERIFY_JWT per function.
       VERIFY_JWT: "${FUNCTIONS_VERIFY_JWT}"
     env_file:
-      - /root/segredos-functions.env
+      - ./volumes/functions-secrets.env
     command: [ "start", "--main-service", "/home/deno/functions/main" ]
 
   analytics:
