@@ -449,6 +449,8 @@ services:
       SUPABASE_DB_URL: postgresql://postgres:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}
       # TODO: Allow configuring VERIFY_JWT per function.
       VERIFY_JWT: "${FUNCTIONS_VERIFY_JWT}"
+    env_file:
+      - /root/segredos-functions.env
     command: [ "start", "--main-service", "/home/deno/functions/main" ]
 
   analytics:
